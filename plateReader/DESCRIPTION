@@ -1,0 +1,12 @@
+Package: plateReader
+Title: Reads Plate Reader Files of Various File Formats
+Version: 0.1
+Authors@R: "mark.doerr <mark.doerr@uni-greifswald.de> [aut, cre]"
+Description: plateReader reads files from various microtiter plate readers.
+    Currently supported readers are: BMG omega, Thermo Varioskan,
+Depends:
+    R (>= 3.0.2)
+Imports:
+    rgl (>= 0.93.0)
+License: GPL-3
+LazyData: true

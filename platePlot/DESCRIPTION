@@ -1,0 +1,13 @@
+Package: platePlot
+Title: Plotting Measurement Data from Microtiter Plate Readers in 2D and 3D
+    formats
+Version: 0.1
+Authors@R: "mark.doerr <mark.doerr@uni-greifswald.de> [aut, cre]"
+Description: platePlot plots measurement data from microtiter plate reader in
+    various 2D and 3D formats.
+Depends:
+    R (>= 3.0.2)
+Imports:
+    rgl (>= 0.93.0)
+License: GPL-3
+LazyData: true

@@ -1,0 +1,11 @@
+# Entry format: Type:Description; supported types: S: sample; R: reference; pCTRL: postitive control; nCTRL: negative control; BL: blank; 0: empty well
+,1,2,3,4,5,6,7,8,9,10,11,12
+"A","R:WT","pCTRL:A3","S:A3sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","BL:blank"
+"B","R:WT","pCTRL:b3","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"C","R:WT","nCTRL:c3","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"D","R:WT","nCTRL:d3","S:D3sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"E","0","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"F","0","S: sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"G","0","S:G2 sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+"H","0","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample","S:sample"
+
