@@ -1,0 +1,12 @@
+"# Barcodes: 0003;0005;0007-0012",,,,,,,,,,,,
+"# Description: This is a template file for plate layouts. It can be directly edited with a plain text editor or in a spread sheet program",,,,,,,,,,,,
+"# Entry format: Type:Description; supported types: S: sample; R: reference; pCTRL: postitive control; nCTRL: negative control; BL: blank; 0: empty well",,,,,,,,,,,,
+"HEAD",1,2,3,4,5,6,7,8,9,10,11,12
+"A","R: WT","0: not related","BL: blank","0: not related","0: not related","0: not related","S:PLE3-WT","S:PLE3-WT","S:PLE3-WT","S:PLE3-WT","S:PLE3-WT","S:PLE3-WT"
+"B","R: WT","0: not related","0: not related","0: not related","0: not related","0: not related","S:PLE3-sG clon 11","S:PLE3-sG clone 11","S:PLE3-sG clone 11","S:PLE3-sG clone 11","S:PLE3-sG clone 11","S:PLE3-sG clone 11"
+"C","BL: blank","0: not related","0: not related","0: not related","0: not related","0: not related","S:PLE3-sG clon 25","S:PLE3-sG clon 25","S:PLE3-sG clon 25","S:PLE3-sG clon 25","S:PLE3-sG clon 25","S:PLE3-sG clon 25"
+"D","0: not related","0: not related","0: not related","0: not related","0: not related","0: not related","S:PLE3-sG clon 34","S:PLE3-sG clon 34","S:PLE3-sG clon 34","S:PLE3-sG clon 34","S:PLE3-sG clon 34","S:PLE3-sG clon 34"
+"E","0: not related","0: not related","0: not related","0: not related","0: not related","0: not related","nCTRL: Vfl-TA WT","nCTRL: Vfl-TA WT","nCTRL: Vfl-TA WT","nCTRL: Vfl-TA WT","nCTRL: Vfl-TA WT","nCTRL: Vfl-TA WT"
+"F","0: not related","0: not related","0: not related","0: not related","0: not related","0: not related","S:CHMO-WT","S:CHMO-WT","S:CHMO-WT","S:CHMO-WT","S:CHMO-WT","S:CHMO-WT"
+"G","0: not related","0: not related","0: not related","0: not related","0: not related","0: not related","S:CHMO-sG","S:CHMO-sG","S:CHMO-sG","S:CHMO-sG","S:CHMO-sG","S:CHMO-sG"
+"H","0: not related","0: not related","0: not related","0: not related","0: not related","0: not related","nCTRL: buffer only","nCTRL: buffer only","nCTRL: buffer only","nCTRL: buffer only","nCTRL: buffer only","nCTRL: buffer only"

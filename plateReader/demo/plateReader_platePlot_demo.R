@@ -26,6 +26,13 @@ growthPlot(growth_pl_df)
 growth_df <- importReaderData("_gr.DAT", method='SPabsMatr', PLC=TRUE)
 expr_df <- importReaderData("_expr_", method='SPabsMatr', PLC=TRUE)
 
+# growth only
+growthExpressionPlot(growth_df)
+
+# expression only
+growthExpressionPlot(growth_df=NULL, expr_df=expr_df)
+
+# plot growth and expression
 growthExpressionPlot(growth_df, expr_df)
 
 # loading fluorescence data

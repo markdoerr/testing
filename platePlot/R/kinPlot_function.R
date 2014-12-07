@@ -145,6 +145,9 @@ kinPlot <- function(kin_abs_df, slopes_df, barcode="0000",
   xlim <- c(0,15.0)
   ylim <- c(0.0,3.1)
   plot_char <- 1
+  num_col <- 10
+  
+  circle_colors <- colorRampPalette(c("blue","green","yellow","red"))(num_col+1) # rev(heat.colors(num_col))
   
   # select data of particular wavelength
   abs_wl_sel_df <- kin_abs_df[kin_abs_df$Wavelength == wavelength,]
@@ -171,6 +174,7 @@ kinPlot <- function(kin_abs_df, slopes_df, barcode="0000",
 
     #transfroming seconds to minutes
     time1min <- time1/60
+
     
     curr_slope_df <- slopes_df[slopes_df$Well == curr_well,]
     
@@ -206,15 +210,20 @@ kinPlot <- function(kin_abs_df, slopes_df, barcode="0000",
       abline( min_wt_slope_line, col='pink', lty=2 )
       if (curr_well %in% wt_wells) box( lwd=4.0) # mark reference wells
     }
+    
+    x_intv = xlim[2]-xlim[1]
+    y_intv = ylim[2]-ylim[1]
         
     # * plotting boxes
     if(markBest) {
+      slope_col <- circle_colors[curr_slope/max_slope*10+1]
+      symbols(x_intv * 0.3, y_intv * 0.93, circles=c(0.8), bg=slope_col,
+              inches=FALSE, add=T)
+      box(col=slope_col, lwd=4.0)  
       if (curr_slope  >= max_slope) box(col="red", lwd=10.0)
     }
 
     # * adding info into the graph (well number, slope, description)    
-    x_intv = xlim[2]-xlim[1]
-    y_intv = ylim[2]-ylim[1]
     
     text(x_intv * 0.1, y_intv * 0.93, curr_well, cex= 2 ) 
     if(description) text(x_intv * 0.12, y_intv * 0.86, paste(meas_type, " : ",  meas_descr, sep=" "), cex= 0.8 ) 

@@ -114,22 +114,41 @@ genWellNumbers <- function(padding = 2)
 #' loadPlateLayout
 #'
 #' @title Reading Plate Layout Information from plate layout file
-#' @param reader_df, barcode="0000", setValueNA=TRUE, setSlopeNA=FALSE
+#' @param reader_df, barcode="0000", set_Value_NA=TRUE, set_Slope_NA=FALSE
 #' @keywords plate readers
 #' @export 
 #' @examples
-#'   addPlateLayout(reader_df, barcode="0000", setValueNA=TRUE, setSlopeNA=FALSE)
+#'   addPlateLayout(reader_df, barcode="0000", set_Value_NA=TRUE, set_Slope_NA=FALSE)
 #' 
 
-loadPlateLayout <- function(barcode="0000")
+loadPlateLayout <- function(barcode="0000", as_list=FALSE)
 {
   file_pattern = paste("0*",barcode,"_plate_layout.*csv",sep="")
   print(file_pattern)
-  layout_file <- list.files(path = ".", pattern = file_pattern  , all.files = FALSE,
+  layout_filename <- list.files(path = ".", pattern = file_pattern  , all.files = FALSE,
                             full.names = FALSE, recursive = FALSE,
                             ignore.case = FALSE, include.dirs = FALSE)[1]
+ 
+  #reading file only once
+  if (is.na(layout_filename) ) {print("ERROR (loadPlateLayout): no layout file found"); return(FALSE) }
+    else data_file <- readLines(layout_filename,encoding= "UTF-8")
+  # reading time
+  layout_description <- grep('Description:',data_file, value=TRUE)
+  print(layout_description )
+  # check errors !
+  if(as_list ){
+    descr_str <- strsplit(layout_description, split=":")[[1]][2]
+    description <- strsplit(descr_str, split="\"")[[1]][1]
   
-  raw_layout <- read.csv(layout_file, header=TRUE, row.names=1, stringsAsFactors=TRUE, 
+  
+  layout_barcodes <- grep('# Barcodes:',data_file, value=TRUE)
+  if( layout_barcodes != character(0)) {
+     bc_str <- strsplit(layout_barcodes, split=":")[[1]][2]
+     bc_str <- strsplit(bc_str, split="\"")[[1]][1]
+     bc_str_vec <- strsplit(bc_str, split=";")[[1]]
+  }
+  }
+  raw_layout <- read.csv(textConnection(data_file), header=TRUE, row.names=1, stringsAsFactors=TRUE, 
                          sep=",", encoding="UTF-8", comment.ch="#")
   well_df <- NULL
   well_info <- function(raw_well_info)
@@ -141,7 +160,11 @@ loadPlateLayout <- function(barcode="0000")
   invisible( apply(raw_layout, c(2,1), well_info ))
 
   well_df$Well=genWellNumbers()
- 
+
+  if (as_list) {
+    return(list('barcodes'=barcode_vec, 'description'=description, 'layout'=well_df))
+  }
+  else 
   return(well_df)
 }
 
@@ -149,14 +172,14 @@ loadPlateLayout <- function(barcode="0000")
 #' addPlateLayout
 #'
 #' @title Adding Plate Layout Information to reader data frame 
-#' @param reader_df, barcode="0000", setValueNA=TRUE, setSlopeNA=FALSE
+#' @param reader_df, barcode="0000", set_Value_NA=TRUE, set_Slope_NA=FALSE
 #' @keywords plate readers
 #' @export 
 #' @examples
-#'   addPlateLayout(reader_df, barcode="0000", setValueNA=TRUE, setSlopeNA=FALSE)
+#'   addPlateLayout(reader_df, barcode="0000", set_Value_NA=TRUE, set_Slope_NA=FALSE)
 #' @note todo : merging bug with multiple measurements per data frame (e.g. groth data)
 
-addPlateLayout <- function(reader_df, barcode="0000", setValueNA=FALSE, setSlopeNA=FALSE)
+addPlateLayout <- function(reader_df, barcode="0000", set_Value_NA=FALSE, set_Slope_NA=FALSE)
 {
   # auto choose barcode
   if (barcode == "0000") barcode <- levels(reader_df$Barcode)[1]
@@ -170,11 +193,11 @@ addPlateLayout <- function(reader_df, barcode="0000", setValueNA=FALSE, setSlope
   # merging new info into original data frame
   reader_df <- merge(reader_df, well_df)
   # set values to NA in empty plates
-  if(setValueNA) reader_df[reader_df$Type == '0',]$Value = NA
-  if(setSlopeNA) {
+  if(set_Value_NA) reader_df[reader_df$Type == '0',]$Value = NA
+  if(set_Slope_NA) {
     reader_df[reader_df$Type == '0',]$Slope = NA
     reader_df[reader_df$Type == '0',]$Intercept = NA
-  }  
+  } 
   return(reader_df)
 }
 
