@@ -1,0 +1,53 @@
+<RCC>
+    <qresource prefix="/linux">
+        <file>resources/linux/48x48/actions/add.png</file>
+        <file>resources/linux/48x48/actions/reload.png</file>
+        <file>resources/linux/48x48/actions/format-indent-more.png</file>
+        <file>resources/linux/48x48/actions/edit-delete.png</file>
+        <file>resources/linux/48x48/actions/edit-find.png</file>
+        <file alias="quit">resources/linux/48x48/actions/system-log-out.png</file>
+        <file>resources/linux/48x48/actions/dialog-cancel.png</file>
+        <file>resources/linux/48x48/actions/dialog-close.png</file>
+        <file>resources/linux/48x48/actions/folder-new.png</file>
+        <file alias="open">resources/linux/48x48/actions/document-open.png</file>
+        <file alias="cut">resources/linux/48x48/actions/edit-cut.png</file>
+        <file alias="paste">resources/linux/48x48/actions/edit-paste.png</file>
+        <file alias="copy">resources/linux/48x48/actions/edit-copy.png</file>
+        <file>resources/linux/48x48/actions/document-new.png</file>
+        <file>resources/linux/48x48/actions/go-down.png</file>
+        <file>resources/linux/48x48/actions/go-up.png</file>
+        <file alias="new">resources/linux/48x48/actions/window-new.png</file>
+        <file>resources/linux/48x48/actions/format-text-bold.png</file>
+        <file>resources/linux/48x48/actions/format-text-italic.png</file>
+        <file>resources/linux/48x48/actions/format-text-underline.png</file>
+        <file alias="pointer">resources/linux/48x48/actions/pointer.png</file>
+        <file alias="line_connect">resources/linux/48x48/actions/linepointer.png</file>
+        <file>resources/linux/48x48/actions/format-text-color.png</file>
+        <file>resources/linux/48x48/actions/preferences-color-star.png</file>
+        <file>resources/linux/48x48/actions/preferences-color-wheel.png</file>
+        <file alias="compile">resources/linux/48x48/actions/gnome-run.png</file>
+        <file alias="MTP96_Dw">resources/linux/images/SBS_deep_well_MTP_48.jpg</file>
+        <file alias="MTP_lids">resources/linux/images/SBS_MTP_lids_48.jpg</file>
+        <file alias="MTP96_Nw">resources/linux/images/SBS_MTP_48.jpg</file>
+        <file alias="redo">resources/linux/48x48/actions/edit-redo.png</file>
+        <file alias="undo">resources/linux/48x48/actions/edit-undo.png</file>
+        <file alias="search">resources/linux/48x48/actions/system-search.png</file>
+        <file alias="tasks/talen_jfk">resources/linux/images/talen_jfk_120x80.png</file>
+        <file alias="tasks/growth_expression">resources/linux/images/growth_expression_120x80.png</file>
+        <file alias="tasks/harvest_cells">resources/linux/images/harvest_cells_120x80.png</file>
+        <file alias="tasks/inoculation">resources/linux/images/inoculation_120x80.png</file>
+        <file alias="tasks/lysis_cells">resources/linux/images/lysis_cells_120x80.png</file>
+        <file alias="tasks/assay">resources/linux/images/assay_120x80.png</file>
+        <file alias="flow/if">resources/linux/images/flow_if_120x80.png</file>
+        <file alias="flow/begin">resources/linux/images/process_begin_120x80.png</file>
+        <file alias="flow/end">resources/linux/images/process_end_120x80.png</file>
+        <file alias="flow/while">resources/linux/images/flow_while_120x80.png</file>
+        <file alias="cultivation/expression">resources/linux/images/expression_120x80.png</file>
+        <file alias="cultivation/growth">resources/linux/images/growth_120x80.png</file>
+        <file alias="flow/read_barcode">resources/linux/images/read_barcode_120x80.png</file>
+        <file alias="container/container_manager">resources/linux/images/container_manager_120x80.png</file>
+        <file alias="liquid_handling/transfer">resources/linux/images/transfer_120x80.png</file>
+        <file alias="analysis/PhRedAssay">resources/linux/images/assay_PhRed_120x80.png</file>
+        <file alias="tasks/wash_cells">resources/linux/images/wash_cells_120x80.png</file>
+    </qresource>
+</RCC>
