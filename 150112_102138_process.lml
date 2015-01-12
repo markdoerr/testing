@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<LARA filetype="Experiment" md5sum="000000000000000000000000000000" version="0.1"><Parameters><ExperimentView height="1600" width="3062" /></Parameters><Process><SubProcess name="BeginProcess" uuid="c08ab4b0-0a7c-48e6-862f-d964f8c38cfc" x_pos="30.0" y_pos="200.0" /><SubProcess name="EndProcess" uuid="5b10f93b-69f0-4330-831c-1aa1afe996e3" x_pos="2254.0" y_pos="200.0" /><SubProcess name="ContainerManager" uuid="1213bdbb-3eee-4a77-a5e9-c81a33780978" x_pos="30.0" y_pos="50.0" /></Process></LARA>
